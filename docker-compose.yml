@@ -26,10 +26,6 @@ services:
     volumes:
       - registry_data:/var/lib/registry/
       - "./.auth/:/auth/"
-    healthcheck:
-      test: ["CMD", "wget", "-s", "localhost:5000/v2/"]
-      interval: 5s
-      timeout: 10s
     networks:
       - registry-backend
     environment:
