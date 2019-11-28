@@ -3,6 +3,7 @@ A project to test a configuration for docker registry
 
 ```shell script
 mkdir ./auth/
+mkdir -p ./www/html
 ```
 
 To create new user and password run this command.
