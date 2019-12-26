@@ -21,8 +21,6 @@ services:
   registry:
     container_name: 'registry'
     image: registry:2
-    expose:
-      - "5000"
     volumes:
       - registry_data:/var/lib/registry/
       - "./.auth/:/auth/"
@@ -35,8 +33,6 @@ services:
   registry-ui:
     container_name: 'ui'
     image: quiq/docker-registry-ui:latest
-    expose:
-      - "8000"
     volumes:
       - ui_data:/opt/data
       - "./configs/ui/config.yml:/opt/config.yml:ro"
@@ -68,11 +64,11 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/leonime/repos/docker-registry-test/www/html
+      device: ${PWD}/www/html
       o: bind
   dhparam:
     driver: local
     driver_opts:
       type: none
-      device: /home/leonime/repos/docker-registry-test/dhparam/
+      device: ${PWD}/dhparam/
       o: bind
