@@ -72,5 +72,5 @@ sudo docker-compose stop nginx
 
 mkdir dhparam
 
-sudo openssl dhparam -out ./dhparam/dhparam-2048.pem 2048
+sudo openssl dhparam -out ./.data/dhparam/dhparam-4096.pem 4096
 ```

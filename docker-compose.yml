@@ -56,19 +56,39 @@ networks:
   registry-frontend:
 
 volumes:
-  registry_data: {}
-  ui_data: {}
-  certbot_etc: {}
-  certbot_var: {}
+  registry_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${PWD}/data/registry
+      o: bind
+  ui_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${PWD}/data/ui
+      o: bind
+  certbot_etc:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${PWD}/data/certbot/etc
+      o: bind
+  certbot_var:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${PWD}/data/certbot/var
+      o: bind
   web_root:
     driver: local
     driver_opts:
       type: none
-      device: ${PWD}/www/html
+      device: ${PWD}/data/www/html
       o: bind
   dhparam:
     driver: local
     driver_opts:
       type: none
-      device: ${PWD}/dhparam/
+      device: ${PWD}/data/dhparam/
       o: bind
