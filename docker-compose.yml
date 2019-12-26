@@ -60,35 +60,35 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: ${PWD}/data/registry
+      device: ${PWD}/.data/registry
       o: bind
   ui_data:
     driver: local
     driver_opts:
       type: none
-      device: ${PWD}/data/ui
+      device: ${PWD}/.data/ui
       o: bind
   certbot_etc:
     driver: local
     driver_opts:
       type: none
-      device: ${PWD}/data/certbot/etc
+      device: ${PWD}/.data/certbot/etc
       o: bind
   certbot_var:
     driver: local
     driver_opts:
       type: none
-      device: ${PWD}/data/certbot/var
+      device: ${PWD}/.data/certbot/var
       o: bind
   web_root:
     driver: local
     driver_opts:
       type: none
-      device: ${PWD}/data/www/html
+      device: ${PWD}/.data/www/html
       o: bind
   dhparam:
     driver: local
     driver_opts:
       type: none
-      device: ${PWD}/data/dhparam/
+      device: ${PWD}/.data/dhparam/
       o: bind
