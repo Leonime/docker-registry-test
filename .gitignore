@@ -1,5 +1,6 @@
 .idea/
 .auth/
+.data/
 dhparam/
 configs/ui/*.yml
 # Byte-compiled / optimized / DLL files
