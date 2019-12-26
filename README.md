@@ -60,3 +60,17 @@ debug: true
 purge_tags_keep_days: 90
 purge_tags_keep_count: 10
 ```
+
+Create certificate.
+```shell script
+sudo docker-compose up --force-recreate --no-deps certbot
+```
+
+Prepare nginx
+```shell script
+sudo docker-compose stop nginx
+
+mkdir dhparam
+
+sudo openssl dhparam -out ./dhparam/dhparam-2048.pem 2048
+```
